@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  background-color: #000;
+
+  font-family: "Roboto", sans-serif;
+  height: 100%;
+}
+.Todo__container {
+  top: 50px;
+  width: 500px;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%);
+  min-height: 600px;
+  background-color: rgba(27, 27, 27, 0.9);
+  border-radius: 10px;
+
+  .todo-form {
+    display: flex;
+    width: 80%;
+    position: sticky;
+    margin: 0 auto;
+    padding-bottom: 15px;
+    input[type="text"] {
+      margin-top: 30px;
+      width: 410px;
+      height: 44px;
+      padding-left: 20px;
+      font-size: 1.6rem;
+      color: black;
+      outline: none;
+      border-bottom-left-radius: 20px;
+      border-top-left-radius: 20px;
+
+      &:focus {
+        border: 1px solid #e6f870;
+      }
+    }
+    .btn-submit {
+      border-bottom-right-radius: 20px;
+      border-top-right-radius: 20px;
+      margin-top: 31px;
+      min-width: 80px;
+      outline: none;
+      cursor: pointer;
+      height: 44px;
+      font-weight: bold;
+      background-color: #909090;
+    }
+    .btn-submit2 {
+      border-bottom-right-radius: 20px;
+      border-top-right-radius: 20px;
+      margin-top: 31px;
+      min-width: 80px;
+      outline: none;
+      cursor: pointer;
+      height: 44px;
+      font-weight: bold;
+      background-color: #909090;
+      display: none;
+    }
+  }
+  .todo-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 6px;
+    width: 80%;
+    margin: 0 auto;
+    max-height: 450px;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 2px;
+      /* background-color: var(--scroll-color); */
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: var(--scroll-bg-color);
+    }
+    &-item {
+      display: flex;
+      align-items: center;
+      height: 50px;
+      padding: 0 20px;
+      justify-content: space-between;
+      margin: 12px 0;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      &:nth-child(1) {
+        margin-top: 30px;
+      }
+      &-content {
+        color: #030303;
+        font-size: 2.1rem;
+        font-weight: bold;
+        width: 250px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 1;
+        padding-bottom: 3px;
+      }
+      .delete-icon {
+        color: rgba(219, 13, 13, 0.9);
+        font-size: 2.5rem;
+        cursor: pointer;
+        transition: all 0.25 ease;
+        &:hover {
+          transform: translateY(-2px);
+        }
+      }
+      .edit-icon {
+        color: rgb(47, 47, 141);
+        font-size: 2.4rem;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: all 0.25 ease;
+        &:hover {
+          transform: translateY(-2px);
+        }
+      }
+    }
+    &-item2 {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 2rem;
+      color: #ffffff;
+    }
+    .pending-text {
+      font-size: 1.8rem;
+      color: #ffffff;
+      padding: 10px 3px;
+    }
+  }
+}
